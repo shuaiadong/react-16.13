@@ -98,3 +98,23 @@ function ReactElement(type, key, ref, props) {
     };
     return element;
 }
+// ---------------- es6 版
+// export function createElement(type, config = {}, ...children) {
+//     const {
+//         ref = null,
+//         key = null,
+//         ...props
+//     } = config;
+
+//     props.children = children.length === 1 ? children[0] : children;
+//     if (type && type.defaultProps) {
+//         const defaultProps = type.defaultProps;
+//         for (let propName in defaultProps) {
+//             if (props[propName] === undefined) {
+//                 props[propName] = defaultProps[propName];
+//             }
+//         }
+//     }
+
+//     return ReactElement(type, key, ref, props);
+// }

@@ -133,7 +133,7 @@ var = vDom = {
 ```
 ![image](http://note.youdao.com/yws/res/1826/F09C58865DA0438C965574519E8BE169)
 
-### `createElement`的react源码解析
+### `createElement`的react源码解析[createElement](https://github.com/facebook/react/blob/v16.13.1/packages/react/src/ReactElement.js)
 ```js
 export function createElement(type, config, children) {
     let propName;
@@ -208,4 +208,29 @@ function ReactElement(type, key, ref, props) {
     };
     return element;
 }
+```
+
+```js
+// 测试可以运行
+// 简化版
+// export function createElement(type, config = {}, ...children) {
+//     const {
+//         ref = null,
+//         key = null,
+//         ...props
+//     } = config;
+
+//     props.children = children.length === 1 ? children[0] : children;
+//     if (type && type.defaultProps) {
+//         const defaultProps = type.defaultProps;
+//         for (let propName in defaultProps) {
+//             if (props[propName] === undefined) {
+//                 props[propName] = defaultProps[propName];
+//             }
+//         }
+//     }
+
+//     return ReactElement(type, key, ref, props);
+// }
+
 ```
