@@ -1,10 +1,6 @@
-import React, {Component} from 'react';
+import React from './react';
 import ReactDOM from 'react-dom';
 
-class App extends Component {
-    render() {
-        return <div>react-dom</div>;
-    }
-}
+let element = React.createElement('h1', {id: 'h1', style: {color: '#f40'}}, 'hello word!');
 
-ReactDOM.render(<App/>, window.root);
+ReactDOM.render(element, window.root);
