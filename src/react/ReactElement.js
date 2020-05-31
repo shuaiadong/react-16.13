@@ -55,13 +55,16 @@ export function createElement(type, config, children) {
         }
     }
 
-// 4. children
+/* 4. 处理 children 
+ *   - 只有一个时 props.children = children
+ *   - 多个 时 是一个数组
+ */
     const childrenLength = arguments.length - 2;
     if (childrenLength === 1) {
         props.children = [children];
     } else if (childrenLength > 1) {
-        // **  Array(childrenLength) **
         const childrenArray = Array(childrenLength);
+        // **  Array(childrenLength)  **
         for (let i = 0; i < childrenLength; i++) {
             childrenArray[i] = arguments[i + 2];
         }

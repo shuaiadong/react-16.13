@@ -1,27 +1,28 @@
-// import React from './react';
-// import ReactDOM from 'react-dom';
-// const React = require('react');
-import * as React from 'react';
+import * as React from './react-source/packages/react';
+import * as ReactDOM from './react-source/packages/react-dom';
+const h = React.createElement;
+class Input extends React.Component {
+    render() {
+        return h('input', )
+    }
+}
 
-// import 
-// 例子 1
-let element = React.createElement('h1', {id: 'h1', style: {color: '#f40'}}, 'hello word!');
-console.log(element);
-// ReactDOM.render(element, window.root);
+class List extends React.Component {
+    render() {
+        return [
+            h('span', {}, 'span'),
+            h('span', {}, 'span'),
+            h('span', {}, 'span'),
+             h('button', {}, 'button')]
+    }
+}
 
-// 例子 2
-// function funcElement() {
-//     return  React.createElement('h1', {id: 'h1', style: {color: '#f40'}}, 'hello word!');
-// }
-// ReactDOM.render(React.createElement(funcElement, {}), window.root);
-
-
-// jsx
-// 例子3
-// ReactDOM.render(<h1 style={{color: '#f40'}}>hello word!</h1>, window.root);
-
-// 例子4
-// function FunJsX() {
-//     return <h1 style={{color: '#f40'}}>hello word1!</h1>;
-// }
-// ReactDOM.render(<FunJsX></FunJsX>, window.root);
+class App extends React.Component {
+    render() {
+        return <div>
+            <Input/>
+            <List/>
+        </div>
+    }
+}
+ReactDOM.render(<App/>, window.root);
